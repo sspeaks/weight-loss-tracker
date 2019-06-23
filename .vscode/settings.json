@@ -1,0 +1,7 @@
+{
+	"appService.zipIgnorePattern": [
+		".vscode{,/**}"
+	],
+	"appService.defaultWebAppToDeploy": "/subscriptions/8b90224d-e668-44e0-966d-eaccab1d5e63/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/weight-loss",
+	"appService.deploySubpath": "dist\\azure-weight-loss-tracker"
+}
