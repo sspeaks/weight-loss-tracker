@@ -1,13 +1,6 @@
 version: '2'
 
 services:
-        angular:
-                build: angular-client 
-                ports:
-                - "4200:4200"
-                volumes:
-                - ./angular-client:/app
-        
         express:
                 build: express-server
                 ports:

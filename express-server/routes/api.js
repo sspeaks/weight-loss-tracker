@@ -14,11 +14,6 @@ const weightSchema = new mongoose.Schema({
 
 const WeightLog = mongoose.model('WeightLog', weightSchema);
 
-/* GET api listing. */
-router.get('/', (req, res) => {
-    res.send('api works');
-});
-
 router.get('/weight', (req,res) => {
 	WeightLog.find({}, (err, users) => {
 		if(err) res.status(500).send(err);

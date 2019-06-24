@@ -13,9 +13,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-// Set our api routes
-app.use('/', api);
+app.use('/api', api);
 
+// Set our api routes
+app.use('/', express.static('dist'));
 
 /**
 **_ Get port from environment and store in Express.
@@ -26,9 +27,9 @@ app.set('port', port);
 /**
 _ Create HTTP server.
      _*/
-     const server = http.createServer(app);
+const server = http.createServer(app);
 
-     /*
-      _ Listen on provided port, on all network interfaces.
-       */
-       server.listen(port, () => console.log(`API running on localhost:${port}`));
+/*
+ _ Listen on provided port, on all network interfaces.
+  */
+server.listen(port, () => console.log(`API running on localhost:${port}`));
