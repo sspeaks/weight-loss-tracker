@@ -24,7 +24,7 @@ router.get('/weight', (req,res) => {
 router.post('/weight', (req,res)=>{
 	let weightEntry = new WeightLog({
 		weight: req.body.weight,
-		timestamp : (new Date()).valueOf()
+		timestamp : req.body.timestamp || (new Date()).valueOf()
 	});
 	weightEntry.save(error => {
 		if(error) res.status(500).send(error);
