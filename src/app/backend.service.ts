@@ -11,7 +11,8 @@ export class BackendService {
   logWeight(weight: number) {
     return this.http.post(
       'https://sspeaks-functions.azurewebsites.net/api/HttpTrigger1?code=hFYzRyY6Olqn/O41xJkt9aOkcedshYhaWMM/ddTtrHq2gav2B3FO7w==',
-       {weight}
-       );
+      { weight },
+      { responseType: "text" }
+    );
   }
 }

@@ -10,6 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class WeightInputComponent implements OnInit {
   public weightForm: FormGroup;
   error = '';
+  message = '';
   constructor(private http: BackendService) { }
 
   ngOnInit() {
@@ -20,7 +21,10 @@ export class WeightInputComponent implements OnInit {
 
   submitWeight(form) {
     console.log(form.weight);
-    this.http.logWeight(form.weight).subscribe(() => {}, (err) => {
+    this.http.logWeight(form.weight).subscribe((result) => {
+      console.log(`SUCCESS: ${result}`)
+      this.message = result;
+    }, (err) => {
       this.error = err.message;
       console.log(err.message);
     });
